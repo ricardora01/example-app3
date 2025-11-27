@@ -30,6 +30,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 
+      - name: Install Composer dependencies
+        run: composer install
+
       - name: Set up the database
         run: |
           cp .env.example .env
